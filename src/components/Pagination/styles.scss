@@ -1,0 +1,26 @@
+.c-pagination-text {
+    cursor: pointer;
+    color: #5299f5;
+
+    &--active {
+        color: #1A73E8;
+        font-weight: bold;
+    }
+}
+
+.c-pagination-margin {
+    margin-right: 16px;
+}
+
+.c-pagination {
+    padding-top: 16px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+
+    &__next {
+        color: #5299f5;
+        cursor: pointer;
+    }
+}
