@@ -1,14 +1,19 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+const ENDPOINT = "https://api.github.com/";
+
+axios.defaults.baseURL = ENDPOINT;
 
 ReactDOM.render(
   <StrictMode>
     <App />
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 reportWebVitals();
