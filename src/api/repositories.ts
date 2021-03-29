@@ -1,15 +1,13 @@
-import axios from "axios";
+import axios, { CancelTokenSource } from "axios";
 import type { RepositoriesResponse } from "typings/repository";
 
 const ITEMS_PER_PAGE = 30;
 
-type SortType = "asc" | "desc";
-
 export const getRepositories = async (
-  search: string = "react",
+  search: string,
   page: number,
-  order: SortType = "desc"
-): Promise<RepositoriesResponse> => {
+  axiosCancelToken: CancelTokenSource,
+): Promise<RepositoriesResponse | undefined> => {
   try {
     const { data } = await axios.get<RepositoriesResponse>(
       `search/repositories`,
@@ -17,14 +15,15 @@ export const getRepositories = async (
         params: {
           q: search,
           per_page: ITEMS_PER_PAGE,
-          order,
+          sort: 'stars',
+          order: "desc",
           page,
         },
+        cancelToken: axiosCancelToken.token,
       }
     );
     return data;
   } catch (error) {
     console.error("[Repositories fetching error]", error);
-    throw new Error(error);
   }
 };
