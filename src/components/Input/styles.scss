@@ -1,0 +1,24 @@
+@import 'styles/main.scss';
+
+.c-input {
+    margin-left: 16px;
+    padding: 4px 8px;
+    border: 2px solid $cl-primary-text;
+    border-radius: 4px;
+    width: min-content;
+
+    &__input {
+        padding: 4px 8px;
+        padding-right: 0;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+    &__button {
+        margin-top: 3px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}

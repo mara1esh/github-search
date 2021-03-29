@@ -1,0 +1,28 @@
+@import 'styles/main';
+
+.p-main {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+
+    &__content {
+        padding-top: 24px;
+        background-color: #fff;
+        border-radius: 4px;
+
+        &__history {
+            padding-left: 16px;
+            padding-bottom: 16px;
+
+            & > ul {
+                list-style-type: none;
+                display: flex;
+
+                li {
+                    margin-right: 16px;
+                    color: $cl-primary-text;
+                }
+            }
+        }
+    }
+}
